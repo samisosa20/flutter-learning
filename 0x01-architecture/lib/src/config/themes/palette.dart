@@ -1,7 +1,25 @@
-import 'package:flutter/painting.dart';
+import 'package:flutter/material.dart';
 
-class Palette {
-  static const Color lightGrey = Color(0xffE5E5E5);
-  static const Color darkerGrey = Color(0xff9E9E9E);
-  static const Color lightBlue = Color(0xffC1F1EB);
+abstract class AppTheme {
+  static ThemeData get material {
+    return ThemeData(
+      useMaterial3: true,
+      colorScheme: ColorScheme.fromSeed(seedColor: Colors.blueGrey),
+    );
+  }
+
+  static ThemeData get light {
+    return ThemeData(
+      appBarTheme: const AppBarTheme(
+        elevation: 0,
+        color: Colors.white,
+        //backgroundColor: Colors.amber,
+      ),
+      scaffoldBackgroundColor: Color.fromARGB(255, 183, 19, 19),
+      primaryColor: Colors.black,
+      splashColor: Colors.transparent,
+      fontFamily: 'IBM',
+      colorScheme: ColorScheme.fromSwatch().copyWith(secondary: Colors.black),
+    );
+  }
 }

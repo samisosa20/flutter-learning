@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:auto_route/auto_route.dart';
+import 'package:oktoast/oktoast.dart';
 
 
 @RoutePage()
@@ -11,15 +12,37 @@ class HomeView extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('First Route'),
+        title: Text('Home'),
       ),
       body: Center(
-        child: ElevatedButton(
-          child: Text('Open route'),
-          onPressed: () {
-            context.router.navigateNamed('/page');
-          },
+        child: Center(
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              ElevatedButton(
+                child: Text('Show users'),
+                onPressed: () {
+                  context.router.navigateNamed('/users');
+                },
+              ),
+              SizedBox(width: 10),
+              ElevatedButton(
+                child: Text('Native Toast'),
+                onPressed: () {
+                  showToast('native oktoast');
+                },
+              ),
+              SizedBox(width: 10),
+              ElevatedButton(
+                child: Text('Style Toast'),
+                onPressed: () {
+                  showToastWidget(Text('hello oktoast'));
+                },
+              ),
+            ],
+          ),
         ),
+        
       ),
     );
   }

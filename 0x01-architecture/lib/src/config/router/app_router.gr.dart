@@ -21,10 +21,10 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const HomeView(),
       );
     },
-    PageRoute.name: (routeData) {
+    ListUserRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: PageView(),
+        child: const ListUserView(),
       );
     },
   };
@@ -45,15 +45,15 @@ class HomeRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [PageView]
-class PageRoute extends PageRouteInfo<void> {
-  const PageRoute({List<PageRouteInfo>? children})
+/// [ListUserView]
+class ListUserRoute extends PageRouteInfo<void> {
+  const ListUserRoute({List<PageRouteInfo>? children})
       : super(
-          PageRoute.name,
+          ListUserRoute.name,
           initialChildren: children,
         );
 
-  static const String name = 'PageRoute';
+  static const String name = 'ListUserRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }
