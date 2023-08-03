@@ -20,6 +20,13 @@ class HomeView extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               ElevatedButton(
+                child: Text('Show News'),
+                onPressed: () {
+                  context.router.navigateNamed('/news');
+                },
+              ),
+              SizedBox(width: 10),
+              ElevatedButton(
                 child: Text('Show users'),
                 onPressed: () {
                   context.router.navigateNamed('/users');

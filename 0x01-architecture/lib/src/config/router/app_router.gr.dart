@@ -21,6 +21,12 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const HomeView(),
       );
     },
+    BreakingNewsRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const BreakingNewsView(),
+      );
+    },
     ListUserRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -40,6 +46,20 @@ class HomeRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'HomeRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [BreakingNewsView]
+class BreakingNewsRoute extends PageRouteInfo<void> {
+  const BreakingNewsRoute({List<PageRouteInfo>? children})
+      : super(
+          BreakingNewsRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'BreakingNewsRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }
